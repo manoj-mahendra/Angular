@@ -1,0 +1,31 @@
+﻿<div class="row">
+    <div class="span10">
+        <h2>Glossary</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="span10">
+        <table class="table table-condensed table-hover">
+            <tr>
+                <th>ID</th>
+                <th>Term</th>
+                <th>Definition</th>
+            </tr>
+            <tr ng-repeat="glossary in glossaries" >
+                <td>{{glossary.id}}</td>
+                <td>
+                    <span ng-show="glossary.showEdit">{{glossary.name}}</span>
+                    <input ng-show="!glossary.showEdit" type="text" ng-model="glossary.name" class="form-control">
+                </td>
+                <td>
+                    <span ng-show="glossary.showEdit">{{glossary.description}}</span>
+                    <input ng-show="!glossary.showEdit" type="text" ng-model="glossary.description" class="form-control">
+                </td>
+                <td>
+                    <span ng-show="glossary.showEdit"><button type="button" class="btn btn-default" ng-click="toggleEdit(glossary)">Edit</button><button type="button" class="btn btn-default" ng-click="delete(glossary)">Delete</button></span>
+                    <span ng-show="!glossary.showEdit"><button type="button" class="btn btn-default" ng-click="save(glossary)">Save</button><button type="button" class="btn btn-default" ng-click="toggleEdit(glossary)">Undo</button></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section JavascriptInHead
+{
+    <script src="~/Scripts/Glossary/glossary-controller.js"></script>
+    <script src="~/Scripts/Glossary/glossary-repository.js"></script>
+    <script src="~/Scripts/Authors/authors-controller.js"></script>
+    <script src="~/Scripts/Authors/authors-repository.js"></script>
+}
+<div class="container">
+    <div class="row">
+        <div class="navbar navbar-default">
+            <div class="navbar-header">
+                <ul class="nav navbar-nav">
+                    <li><span class="navbar-brand">Glossary</span></li>
+                </ul>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/Registration/Glossary">Browse Catalog</a></li>
+                    <li><a href="/Registration/CreateGlossary">Create Glossary</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                <!--      <li><a href="/Registration/CreateGlossary">Create Glossary</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div ng-view></div>
+</div>
+
